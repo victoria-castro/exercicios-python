@@ -1,0 +1,110 @@
+1) Faça um programa que peça um valor monetário e diminua-o em 15%. Seu programa deve imprimir a mensagem "O novo valor é (valor)".
+"""
+
+valor_monetario = float(input("Insira o valor monetário: "))
+
+valor_diminuido = valor_monetario * 0.85
+
+print("O novo valor é ", valor_diminuido)
+
+"""2) Faça um programa que leia a validade das informações:
+    a. Idade: entre 0 e 150;
+    b. Salário: maior que 0;
+    c. Sexo: M, F ou Outro;
+    
+  O programa deve imprimir uma mensagem de erro para cada informação inválida.
+"""
+
+idade = input('Insira uma idade entre 0 e 150 anos: ')
+while int(idade) < 0 or int(idade) > 150:
+    idade = input('Idade não aceita. Insira uma idade entre 0 e 150 anos: ')
+    if int(idade) > 0 and int(idade) < 150:
+        print('Idade aceita.')
+
+
+salario = input('Insira um salário maior que 0: ')
+while float(salario) < 0:
+    salario = input('Salário não aceito. Insira um salário acima de 0: ')
+    if float(salario) > 0:
+        print("Salário aceito.")
+
+genero = input('Insira um gênero entre M, F ou Outro: ')
+while genero.upper() not in ['M', 'F', 'OUTRO']: 
+    genero = input('Gênero informado não aceito. Insira um gênero válido entre M, F ou Outro: ')
+print ('Gênero aceito.')
+
+"""3) Vamos fazer um programa para verificar quem é o assassino de um crime. Para descobrir o assassino, a polícia faz um pequeno questionário com 5 perguntas onde a resposta só pode ser sim ou não:
+*   Mora perto da vítima?
+*   Já trabalhou com a vítima?
+*   Tefelonou para a vítima?
+*   Esteve no local do crime?
+*   Devia para a vítima?
+Cada resposta sim d[a um ponto para o suspeito. A polícia considera que os suspeitos com 5 pontos são os assassinos, com 4 a 3 pontos são cúmplices e 2 pontos são apenas suspeitos, necessitando outras investigações. Valores iguais ou abaixo de 1 são liberados.
+"""
+
+print('Responda todas as perguntas com SIM ou NÃO')
+contagem = 0
+
+perg1 = input('Mora perto da vítima?')
+while perg1.upper() not in ['SIM', 'NÃO']:
+  perg1 = input('Resposta inválida. Mora perto da vítima? ')
+if perg1.upper() == 'SIM':
+    contagem = contagem + 1
+else: 
+  pass
+
+perg2 = input('Já trabalhou com a vítima?')
+while perg2.upper() not in ['SIM', 'NÃO']:
+  perg2 = input('Resposta inválida. Já trabalhou com a vítima? ')
+if perg2.upper() == 'SIM':
+    contagem = contagem + 1
+else: 
+  pass
+
+perg3 = input('Tefelonou para a vítima?')
+while perg3.upper() not in ['SIM', 'NÃO']:
+  perg3 = input('Resposta inválida. Tefelonou para a vítima? ')
+if perg3.upper() == 'SIM':
+    contagem = contagem + 1
+else: 
+  pass
+
+perg4 = input('Esteve no local do crime?')
+while perg4.upper() not in ['SIM', 'NÃO']:
+  perg4 = input('Resposta inválida. Esteve no local do crime? ')
+if perg4.upper() == 'SIM':
+    contagem = contagem + 1
+else: 
+  pass
+
+perg5 = input('Devia para a vítima?')
+while perg5.upper() not in ['SIM', 'NÃO']:
+  perg5 = input('Resposta inválida. Devia para a vítima? ')
+if perg5.upper() == 'SIM':
+    contagem = contagem + 1
+else: 
+  pass
+
+if contagem <= 1:
+  print('Liberado.')
+elif contagem == 2:
+  print('Suspeito.')
+elif contagem == 3 or contagem == 4:
+  print('Cúmplice.')
+else:
+  print('Assassino.')
+
+"""4) Faça um programa que imprima a tabuada do 9 usando loops."""
+
+tabuada = int(input("Insira um número até 10 que deseja fazer a tabuada do 9: "))
+while tabuada > 10:
+  tabuada = int(input('O número informado não é válido. Insira um valor de 1 até 10: '))
+
+multiplicador = 1
+
+while tabuada <= 10 and tabuada > 0:
+  print(multiplicador, '* 9 =', multiplicador * 9)
+  multiplicador = multiplicador + 1
+  tabuada = tabuada - 1
+
+print('Tabuada do 9 impressa até o número informado.')
