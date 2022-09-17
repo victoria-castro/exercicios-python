@@ -1,0 +1,4 @@
+Olá, meu nome é Victória!
+Sou uma Engenheira em transição de carreira para Data Analytics.
+
+Realizei o curso "Python Basics" da Let's Code e aqui reuni os exercícios que resolvi.
